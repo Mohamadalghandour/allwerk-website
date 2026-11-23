@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ALLWERK DIENSTLEISTUNGEN – zuverlässig, professionell und stark. Ihr Partner für vielseitige Dienstleistungen.">
+  <meta name="description" content="ALLWERK DIENSTLEISTUNGEN – zuverlässig, professionell und stark. Ihr Partner für vielseitige Dienstleistungen in Bad Driburg und deutschlandweit.">
   <title>ALLWERK DIENSTLEISTUNGEN</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,9 +66,54 @@
     .service p { color: #c4c0b8; font-size: 14px; }
     .about { text-align: center; max-width: 850px; margin: auto; }
     .about p { color: #c9c5bc; margin-top: 18px; }
+    .area { background: #141414; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; }
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .area-box {
+      background: #1d1a14;
+      border: 1px solid #493b23;
+      padding: 28px;
+      border-radius: 5px;
+    }
+    .area-box h3 { color: var(--gold); margin-bottom: 10px; font-size: 20px; }
+    .area-box p { color: #d0ccc2; font-size: 15px; }
     .contact { background: #211b11; text-align: center; }
     .contact h2 { font-size: 34px; }
     .contact p { color: #d5cdbd; margin-top: 12px; }
+    .contact-links {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background: #16120b;
+      border: 1px solid #4d3f26;
+      padding: 18px 28px;
+      border-radius: 5px;
+      min-width: 260px;
+    }
+    .contact-card span {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .contact-card a {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .contact-card a:hover { text-decoration: underline; }
     footer {
       background: #080808; padding: 25px 8%; text-align: center;
       color: #999; font-size: 13px; border-top: 1px solid #393126;
@@ -90,6 +135,7 @@
     <a href="#start">Startseite</a>
     <a href="#leistungen">Leistungen</a>
     <a href="#ueber-uns">Über uns</a>
+    <a href="#einsatzgebiet">Einsatzgebiet</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
 </header>
@@ -154,10 +200,37 @@
     </div>
   </section>
 
+  <section class="area" id="einsatzgebiet">
+    <div class="section-title">
+      <h2>Unser Einsatzgebiet</h2>
+      <div class="gold-line"></div>
+      <p>Regional und deutschlandweit für Sie im Einsatz.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-box">
+        <h3>Regionaler Einsatz</h3>
+        <p><strong>Kleinere Aufträge:</strong> Rund um Bad Driburg und im Umkreis von ca. 200 km sind wir kurzfristig und flexibel für Sie vor Ort.</p>
+      </div>
+      <div class="area-box">
+        <h3>Deutschlandweiter Einsatz</h3>
+        <p><strong>Größere Projekte:</strong> Bei längeren Aufträgen und mehrwöchigen Einsätzen sind wir deutschlandweit für Sie verfügbar.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="kontakt">
     <h2>Wir freuen uns auf Ihre Anfrage!</h2>
-    <p>Sie benötigen Unterstützung? Sprechen Sie uns an.</p>
-    <p>Telefon und E-Mail werden hier ergänzt.</p>
+    <p>Sie benötigen Unterstützung? Sprechen Sie uns direkt an.</p>
+    <div class="contact-links">
+      <div class="contact-card">
+        <span>Telefon & WhatsApp</span>
+        <a href="tel:+4917622815080">0176 22815080</a>
+      </div>
+      <div class="contact-card">
+        <span>E-Mail</span>
+        <a href="mailto:info@allwerk-dienstleistungen.de">info@allwerk-dienstleistungen.de</a>
+      </div>
+    </div>
   </section>
 </main>
 
