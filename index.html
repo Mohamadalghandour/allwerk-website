@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ALLWERK DIENSTLEISTUNGEN – Ihr starker Partner für Gartenarbeiten, Gebäudereinigung, Hausmeisterservice, Kurierdienst, Entrümpelung, Winterdienst & allgemeine Dienstleistungen in Bad Driburg und deutschlandweit.">
+  <meta name="description" content="ALLWERK DIENSTLEISTUNGEN – Ihr Partner für Gartenarbeiten, Gebäudereinigung, Hausmeisterservice, Kurierdienst, Entrümpelung, Winterdienst & allgemeine Dienstleistungen in Bad Driburg und deutschlandweit.">
   <title>ALLWERK DIENSTLEISTUNGEN – Zuverlässig • Professionell • Stark</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,48 +14,27 @@
       color: #f5f2e9;
       line-height: 1.65;
     }
-    :root {
-      --gold: #d5ad58;
-      --gold-dark: #b38c3c;
-      --muted: #b9b5aa;
-      --card: #1c1c1c;
-      --border: #393126;
-    }
-
-    /* NAVIGATION */
+    :root { --gold: #d5ad58; --muted: #b9b5aa; --card: #1c1c1c; --border: #393126; }
     header {
       padding: 16px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border);
-      background: rgba(9, 9, 9, 0.96);
+      background: #090909;
       flex-wrap: wrap;
       gap: 15px;
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: #f5f2e9;
-    }
-    .logo-wrap img {
-      height: 44px;
-      width: auto;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-    }
+    .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #f5f2e9; }
+    .logo-wrap img { height: 44px; width: auto; border-radius: 4px; border: 1px solid var(--border); }
     .logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; }
     .logo span { color: var(--gold); }
     nav { display: flex; gap: 20px; flex-wrap: wrap; }
-    nav a { color: #f5f2e9; text-decoration: none; font-size: 14px; transition: 0.2s; }
+    nav a { color: #f5f2e9; text-decoration: none; font-size: 14px; }
     nav a:hover { color: var(--gold); }
-
-    /* HERO */
     .hero {
       padding: 60px 8% 80px;
       text-align: center;
@@ -77,256 +56,95 @@
     h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.15; margin: 14px 0; }
     h1 span { color: var(--gold); }
     .hero p { color: #d0ccc2; font-size: 18px; max-width: 650px; margin: 0 auto; }
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .button {
-      display: inline-block; padding: 14px 28px;
-      background: var(--gold); color: #111; text-decoration: none;
-      font-weight: bold; border-radius: 4px; transition: 0.2s;
-    }
-    .button:hover { background: #e3be6b; }
-    .button-outline {
-      display: inline-block; padding: 14px 28px;
-      border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
-      font-weight: bold; border-radius: 4px; transition: 0.2s;
-    }
-    .button-outline:hover { background: rgba(213, 173, 88, 0.14); }
-
-    /* ALLGEMEINE SEKTIONEN */
-    section { padding: 80px 8%; }
+    .hero-buttons { margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .button { display: inline-block; padding: 14px 28px; background: var(--gold); color: #111; text-decoration: none; font-weight: bold; border-radius: 4px; }
+    .button-outline { display: inline-block; padding: 14px 28px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; border-radius: 4px; }
+    section { padding: 75px 8%; }
     .section-title { text-align: center; margin-bottom: 45px; max-width: 750px; margin-left: auto; margin-right: auto; }
     .section-title h2 { font-size: clamp(28px, 4vw, 36px); }
     .section-title p { color: var(--muted); margin-top: 10px; font-size: 16px; }
     .gold-line { width: 60px; height: 3px; background: var(--gold); margin: 16px auto; }
-
-    /* LEISTUNGEN & KLICKBARE DETAILS */
     .services { background: #151515; }
-    .hint-badge {
-      display: inline-block;
-      background: rgba(213, 173, 88, 0.14);
-      border: 1px solid rgba(213, 173, 88, 0.4);
-      color: var(--gold);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin-top: 12px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .service {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .service:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    }
+    .hint-badge { display: inline-block; background: rgba(213, 173, 88, 0.14); border: 1px solid rgba(213, 173, 88, 0.4); color: var(--gold); padding: 6px 14px; border-radius: 20px; font-size: 13px; margin-top: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .service { background: var(--card); border: 1px solid var(--border); padding: 28px; border-radius: 6px; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
+    .service:hover { border-color: var(--gold); }
     .service .symbol { font-size: 30px; color: var(--gold); }
     .service h3 { margin: 14px 0 8px; color: var(--gold); font-size: 20px; }
     .service p { color: #c4c0b8; font-size: 14px; margin-bottom: 18px; }
-    .more-btn {
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* DETAIL MODAL (POP-UP BEI KLICK AUF LEISTUNG) */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 999;
-      padding: 20px;
-      overflow-y: auto;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-box {
-      background: #181612;
-      border: 1px solid var(--gold);
-      max-width: 780px;
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-      margin: auto;
-    }
-    .modal-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid var(--border);
-    }
-    .modal-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(10, 10, 10, 0.85);
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .modal-close:hover { background: var(--gold); color: #111; }
-    .modal-body { padding: 30px; }
-    .modal-body h3 { color: var(--gold); font-size: 26px; margin-bottom: 12px; }
+    .more-btn { color: var(--gold); font-size: 13px; font-weight: bold; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); z-index: 999; padding: 20px; overflow-y: auto; align-items: center; justify-content: center; }
+    .modal-box { background: #181612; border: 1px solid var(--gold); max-width: 780px; width: 100%; border-radius: 8px; overflow: hidden; position: relative; margin: auto; }
+    .modal-img { width: 100%; height: 240px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+    .modal-close { position: absolute; top: 14px; right: 14px; background: rgba(10, 10, 10, 0.85); color: var(--gold); border: 1px solid var(--gold); width: 38px; height: 38px; border-radius: 50%; font-size: 20px; cursor: pointer; font-weight: bold; }
+    .modal-body { padding: 28px; }
+    .modal-body h3 { color: var(--gold); font-size: 25px; margin-bottom: 12px; }
     .modal-body p { color: #dcd7cd; font-size: 15px; margin-bottom: 18px; }
-    .modal-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-    .modal-list li {
-      background: #221f19;
-      border-left: 3px solid var(--gold);
-      padding: 10px 14px;
-      font-size: 14px;
-      color: #f5f2e9;
-    }
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* WARUM ALLWERK */
-    .why-section { background: #101010; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .why-card {
-      background: #171511;
-      border: 1px solid #332b1e;
-      padding: 26px;
-      border-radius: 6px;
-    }
+    .modal-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 24px; }
+    .modal-list li { background: #221f19; border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #f5f2e9; }
+    .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .why-grid, .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .why-card, .step-card { background: #171511; border: 1px solid #332b1e; padding: 26px; border-radius: 6px; }
     .why-card h3 { color: var(--gold); font-size: 18px; margin-bottom: 8px; }
-    .why-card p { color: #c4c0b8; font-size: 14px; }
-
-    /* ÜBER UNS */
+    .why-card p, .step-card p { color: #c4c0b8; font-size: 14px; }
     .about-section { background: #161410; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; }
     .about { text-align: center; max-width: 850px; margin: auto; }
     .about p { color: #d0ccc2; margin-top: 18px; font-size: 16px; }
-
-    /* ABLAUF IN 3 SCHRITTEN */
-    .steps-section { background: #101010; }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-    .step-card {
-      background: #191919;
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 6px;
-      position: relative;
-    }
-    .step-num {
-      display: inline-block;
-      background: var(--gold);
-      color: #111;
-      font-weight: 900;
-      width: 34px;
-      height: 34px;
-      line-height: 34px;
-      text-align: center;
-      border-radius: 50%;
-      margin-bottom: 14px;
-    }
+    .step-num { display: inline-block; background: var(--gold); color: #111; font-weight: 900; width: 34px; height: 34px; line-height: 34px; text-align: center; border-radius: 50%; margin-bottom: 14px; }
     .step-card h3 { color: #f5f2e9; margin-bottom: 8px; font-size: 19px; }
-    .step-card p { color: #b9b5aa; font-size: 14px; }
-
-    /* EINSATZGEBIET */
     .area { background: #15130f; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; }
-    .area-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .area-box {
-      background: #1d1a14;
-      border: 1px solid #493b23;
-      padding: 32px;
-      border-radius: 6px;
-    }
-    .area-tag {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #111;
-      background: var(--gold);
-      padding: 4px 10px;
-      border-radius: 3px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+    .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 960px; margin: 0 auto; }
+    .area-box { background: #1d1a14; border: 1px solid #493b23; padding: 32px; border-radius: 6px; }
+    .area-tag { display: inline-block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #111; background: var(--gold); padding: 4px 10px; border-radius: 3px; font-weight: bold; margin-bottom: 12px; }
     .area-box h3 { color: var(--gold); margin-bottom: 12px; font-size: 22px; }
-    .area-box p { color: #d8d3c8; font-size: 15px; margin-bottom: 10px; }
-
-    /* KONTAKT */
+    .area-box p { color: #d8d3c8; font-size: 15px; }
     .contact { background: #211b11; text-align: center; }
     .contact h2 { font-size: 34px; }
     .contact p { color: #d5cdbd; margin-top: 12px; max-width: 650px; margin-left: auto; margin-right: auto; }
-    .contact-links {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .contact-links { margin-top: 32px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .contact-card { background: #16120b; border: 1px solid #4d3f26; padding: 22px 28px; border-radius: 6px; min-width: 260px; }
+    .contact-card span { display: block; font-size: 12px; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; }
+    .contact-card a { color: var(--gold); font-size: 18px; font-weight: bold; text-decoration: none; }
+    footer { background: #080808; padding: 35px 8%; text-align: center; color: #999; font-size: 13px; border-top: 1px solid var(--border); }
+    footer strong { color: var(--gold); }
+    .legal-links { margin-top: 16px; display: flex; justify-content: center; gap: 22px; }
+    .legal-links button { background: none; border: none; color: #b9b5aa; text-decoration: underline; cursor: pointer; font-size: 13px; }
+    .legal-box { display: none; max-width: 850px; margin: 25px auto 0; text-align: left; background: #141414; border: 1px solid var(--border); padding: 25px; border-radius: 6px; color: #c9c5bc; font-size: 14px; }
+    .legal-box h3 { color: var(--gold); margin-bottom: 12px; font-size: 20px; }
+    .legal-box h4 { color: #f5f2e9; margin: 16px 0 6px; font-size: 15px; }
+    .legal-box p { margin-bottom: 10px; }
+    .close-legal { margin-top: 15px; padding: 8px 16px; background: #2b251c; color: var(--gold); border: 1px solid var(--gold); border-radius: 3px; cursor: pointer; }
+    @media(max-width: 600px) {
+      header { justify-content: center; position: static; }
+      nav { justify-content: center; }
+      .hero { padding: 45px 6% 60px; }
+      section { padding: 60px 6%; }
     }
-    .contact-card {
-      background: #16120b;
-      border: 1px solid #4d3f26;
-      padding: 22px 28px;
-      border-radius: 6px;
-      min-width: 260px;
-    }
-    .contact-card span {
-      display: block;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--muted);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#start" class="logo-wrap">
+    <img src="logo.png" alt="ALLWERK Dienstleistungen Logo">
+    <div class="logo">ALL<span>WERK</span></div>
+  </a>
+  <nav>
+    <a href="#start">Startseite</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#vorteile">Vorteile</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#einsatzgebiet">Einsatzgebiet</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero" id="start">
+    <img src="logo.png" alt="ALLWERK Dienstleistungen – Zuverlässig, Professionell, Stark" class="hero-banner">
+    <div class="hero-content">
+      <div class="eyebrow">IHR PARTNER FÜR VIELE AUFGABEN</div>
+      <h1>ALLWERK <span>DIENSTLEISTUNGEN</span></h1>
+      <p>Ob Privatkunden, Hausverwaltungen oder Gewerbe: Wir bieten Ihnen tatkräftige, saubere und zuverlässige Unterstützung rund um Haus, Garten, Transport und Objektbetreuung.</p>
+      <div class="hero-buttons">
+        <a class="button" href="#leistungen">ALLE LEISTUNGEN ANSEHEN</a>
