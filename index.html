@@ -3,77 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALLWERK DIENSTLEISTUNGEN</title>
+  <title>ALLWERK DIENSTLEISTUNGEN – Zuverlässig • Professionell • Stark</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: Arial, sans-serif; background: #101010; color: #f5f2e9; line-height: 1.65; }
-    :root { --gold: #d5ad58; --muted: #b9b5aa; --card: #1c1c1c; --border: #393126; }
-    header { padding: 16px 7%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: #090909; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 100; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0c0c0c; color: #f5f2e9; line-height: 1.65; }
+    :root { --gold: #d5ad58; --gold-light: #edd085; --muted: #b5b0a4; --card: #161616; --border: #332b1e; }
+    .topbar { background: #18140d; border-bottom: 1px solid #2e2619; padding: 7px 7%; font-size: 12px; color: #d5cdbd; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .topbar span strong { color: var(--gold); }
+    header { padding: 15px 7%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: rgba(10, 10, 10, 0.96); backdrop-filter: blur(8px); flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 100; }
     .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #f5f2e9; }
-    .logo-wrap img { height: 44px; border-radius: 4px; border: 1px solid var(--border); }
+    .logo-wrap img { height: 42px; border-radius: 4px; border: 1px solid var(--gold); }
     .logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; }
     .logo span { color: var(--gold); }
-    nav { display: flex; gap: 18px; flex-wrap: wrap; }
-    nav a { color: #f5f2e9; text-decoration: none; font-size: 14px; }
+    nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+    nav a { color: #f5f2e9; text-decoration: none; font-size: 14px; font-weight: 500; }
     nav a:hover { color: var(--gold); }
-    .hero { padding: 55px 8% 75px; text-align: center; background: radial-gradient(ellipse at 50% 25%, #3d2e14 0%, #14110b 45%, #0b0b0b 85%); border-bottom: 1px solid #2b2419; }
-    .hero-banner { max-width: 760px; width: 100%; margin: 0 auto 30px; display: block; border-radius: 8px; border: 1px solid #4d3e24; box-shadow: 0 18px 45px rgba(0,0,0,0.8); }
-    .hero-content { max-width: 750px; margin: 0 auto; }
-    .eyebrow { color: var(--gold); letter-spacing: 4px; font-size: 13px; text-transform: uppercase; font-weight: bold; }
-    h1 { font-size: clamp(32px, 5vw, 50px); line-height: 1.15; margin: 14px 0; }
+    .nav-cta { background: var(--gold); color: #111 !important; padding: 8px 16px; border-radius: 4px; font-weight: bold !important; }
+    .hero {
+      padding: 65px 7% 75px;
+      background: linear-gradient(125deg, rgba(12,12,12,0.94) 45%, rgba(45,33,14,0.82) 100%),
+                  url('https://pexels.com') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+    .eyebrow { display: inline-block; background: rgba(213,173,88,0.15); border: 1px solid rgba(213,173,88,0.4); color: var(--gold); padding: 5px 14px; border-radius: 20px; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; font-weight: bold; margin-bottom: 16px; }
+    h1 { font-size: clamp(32px, 4.5vw, 52px); line-height: 1.12; margin-bottom: 18px; }
     h1 span { color: var(--gold); }
-    .hero p { color: #d0ccc2; font-size: 17px; max-width: 640px; margin: 0 auto; }
-    .hero-buttons { margin-top: 28px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-    .button { display: inline-block; padding: 14px 26px; background: var(--gold); color: #111; text-decoration: none; font-weight: bold; border-radius: 4px; }
-    .button-outline { display: inline-block; padding: 14px 26px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; border-radius: 4px; }
-    section { padding: 70px 8%; }
-    .section-title { text-align: center; margin-bottom: 42px; max-width: 740px; margin-left: auto; margin-right: auto; }
-    .section-title h2 { font-size: clamp(26px, 4vw, 35px); }
+    .hero-text p { color: #d6d1c7; font-size: 17px; margin-bottom: 24px; max-width: 580px; }
+    .hero-checks { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; font-size: 13px; color: #ece7dc; }
+    .hero-checks span { background: rgba(255,255,255,0.06); border: 1px solid #383022; padding: 6px 12px; border-radius: 4px; }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .button { display: inline-block; padding: 14px 26px; background: linear-gradient(135deg, var(--gold), #b88d36); color: #111; text-decoration: none; font-weight: bold; border-radius: 4px; }
+    .button-outline { display: inline-block; padding: 14px 26px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; border-radius: 4px; background: rgba(0,0,0,0.4); }
+    .hero-card { background: rgba(18, 16, 12, 0.88); border: 1px solid var(--gold); padding: 14px; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.85); }
+    .hero-card img { width: 100%; height: auto; display: block; border-radius: 6px; }
+    .stats-bar { background: #14120e; border-bottom: 1px solid var(--border); padding: 28px 7%; }
+    .stats-grid { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+    .stat-item strong { display: block; font-size: 28px; color: var(--gold); font-weight: 900; }
+    .stat-item span { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    section { padding: 75px 7%; }
+    .section-title { text-align: center; margin-bottom: 45px; max-width: 740px; margin-left: auto; margin-right: auto; }
+    .section-title h2 { font-size: clamp(26px, 4vw, 36px); }
     .section-title p { color: var(--muted); margin-top: 10px; font-size: 16px; }
     .gold-line { width: 60px; height: 3px; background: var(--gold); margin: 15px auto; }
-    .services { background: #151515; }
-    .hint-badge { display: inline-block; background: rgba(213,173,88,0.14); border: 1px solid rgba(213,173,88,0.4); color: var(--gold); padding: 6px 14px; border-radius: 20px; font-size: 13px; margin-top: 12px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 20px; max-width: 1180px; margin: 0 auto; }
-    .service { background: var(--card); border: 1px solid var(--border); padding: 26px; border-radius: 6px; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
-    .service:hover { border-color: var(--gold); }
-    .service .symbol { font-size: 28px; color: var(--gold); }
-    .service h3 { margin: 12px 0 8px; color: var(--gold); font-size: 19px; }
+    .services { background: #111111; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+    .service { background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; transition: 0.25s; }
+    .service:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .service-thumb { width: 100%; height: 175px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+    .service-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .service h3 { color: var(--gold); font-size: 20px; margin-bottom: 8px; }
     .service p { color: #c4c0b8; font-size: 14px; margin-bottom: 16px; }
-    .more-btn { color: var(--gold); font-size: 13px; font-weight: bold; }
-    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.86); z-index: 999; padding: 20px; overflow-y: auto; align-items: center; justify-content: center; }
-    .modal-box { background: #181612; border: 1px solid var(--gold); max-width: 760px; width: 100%; border-radius: 8px; overflow: hidden; position: relative; margin: auto; }
-    .modal-img { width: 100%; height: 230px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
-    .modal-close { position: absolute; top: 14px; right: 14px; background: rgba(10,10,10,0.88); color: var(--gold); border: 1px solid var(--gold); width: 38px; height: 38px; border-radius: 50%; font-size: 20px; cursor: pointer; font-weight: bold; }
-    .modal-body { padding: 26px; }
-    .modal-body h3 { color: var(--gold); font-size: 24px; margin-bottom: 10px; }
-    .modal-body p { color: #dcd7cd; font-size: 15px; margin-bottom: 16px; }
-    .modal-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin-bottom: 22px; }
-    .modal-list li { background: #221f19; border-left: 3px solid var(--gold); padding: 9px 13px; font-size: 14px; color: #f5f2e9; }
+    .more-btn { color: var(--gold-light); font-size: 13px; font-weight: bold; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 999; padding: 20px; overflow-y: auto; align-items: center; justify-content: center; }
+    .modal-box { background: #181612; border: 1px solid var(--gold); max-width: 780px; width: 100%; border-radius: 8px; overflow: hidden; position: relative; margin: auto; }
+    .modal-img { width: 100%; height: 250px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+    .modal-close { position: absolute; top: 14px; right: 14px; background: rgba(10,10,10,0.9); color: var(--gold); border: 1px solid var(--gold); width: 38px; height: 38px; border-radius: 50%; font-size: 20px; cursor: pointer; font-weight: bold; }
+    .modal-body { padding: 28px; }
+    .modal-body h3 { color: var(--gold); font-size: 25px; margin-bottom: 10px; }
+    .modal-body p { color: #dcd7cd; font-size: 15px; margin-bottom: 18px; }
+    .modal-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 24px; }
+    .modal-list li { background: #221f19; border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 14px; color: #f5f2e9; }
     .modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .why-grid, .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-    .why-card, .step-card { background: #171511; border: 1px solid #332b1e; padding: 25px; border-radius: 6px; }
+    .why-grid, .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1150px; margin: 0 auto; }
+    .why-card, .step-card { background: #161410; border: 1px solid #332b1e; padding: 26px; border-radius: 8px; }
     .why-card h3 { color: var(--gold); font-size: 18px; margin-bottom: 8px; }
     .why-card p, .step-card p { color: #c4c0b8; font-size: 14px; }
-    .about-section { background: #161410; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; text-align: center; }
-    .about { max-width: 840px; margin: auto; }
-    .about p { color: #d0ccc2; margin-top: 16px; font-size: 16px; }
     .step-num { display: inline-block; background: var(--gold); color: #111; font-weight: 900; width: 34px; height: 34px; line-height: 34px; text-align: center; border-radius: 50%; margin-bottom: 12px; }
     .step-card h3 { color: #f5f2e9; margin-bottom: 8px; font-size: 18px; }
-    .area { background: #15130f; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; }
-    .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; max-width: 940px; margin: 0 auto; }
-    .area-box { background: #1d1a14; border: 1px solid #493b23; padding: 30px; border-radius: 6px; }
+    .area { background: #14120e; border-top: 1px solid #2b251c; border-bottom: 1px solid #2b251c; }
+    .area-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 980px; margin: 0 auto; }
+    .area-box { background: #1d1a14; border: 1px solid #493b23; padding: 30px; border-radius: 8px; }
     .area-tag { display: inline-block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #111; background: var(--gold); padding: 4px 10px; border-radius: 3px; font-weight: bold; margin-bottom: 12px; }
     .area-box h3 { color: var(--gold); margin-bottom: 10px; font-size: 21px; }
     .area-box p { color: #d8d3c8; font-size: 15px; }
-    .contact { background: #211b11; text-align: center; }
-    .contact h2 { font-size: 33px; }
+    .faq-list { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    details { background: #161616; border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; }
+    summary { font-weight: bold; color: var(--gold); cursor: pointer; font-size: 16px; }
+    details p { margin-top: 10px; color: #ccc7bc; font-size: 14px; }
+    .contact { background: #1d170e; text-align: center; border-top: 1px solid var(--border); }
+    .contact h2 { font-size: 34px; }
     .contact p { color: #d5cdbd; margin-top: 12px; max-width: 640px; margin-left: auto; margin-right: auto; }
     .contact-links { margin-top: 30px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
-    .contact-card { background: #16120b; border: 1px solid #4d3f26; padding: 20px 26px; border-radius: 6px; min-width: 250px; }
+    .contact-card { background: #120f09; border: 1px solid #4d3f26; padding: 20px 26px; border-radius: 8px; min-width: 250px; }
     .contact-card span { display: block; font-size: 12px; letter-spacing: 2px; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; }
     .contact-card a { color: var(--gold); font-size: 17px; font-weight: bold; text-decoration: none; }
-    footer { background: #080808; padding: 32px 8%; text-align: center; color: #999; font-size: 13px; border-top: 1px solid var(--border); }
+    footer { background: #070707; padding: 34px 7%; text-align: center; color: #999; font-size: 13px; border-top: 1px solid var(--border); }
     footer strong { color: var(--gold); }
     .legal-links { margin-top: 15px; display: flex; justify-content: center; gap: 22px; }
     .legal-links button { background: none; border: none; color: #b9b5aa; text-decoration: underline; cursor: pointer; font-size: 13px; }
@@ -82,36 +98,57 @@
     .legal-box h4 { color: #f5f2e9; margin: 14px 0 5px; font-size: 15px; }
     .legal-box p { margin-bottom: 8px; }
     .close-legal { margin-top: 14px; padding: 8px 16px; background: #2b251c; color: var(--gold); border: 1px solid var(--gold); border-radius: 3px; cursor: pointer; }
-    @media(max-width: 600px) { header { justify-content: center; position: static; } nav { justify-content: center; } .hero { padding: 45px 6% 55px; } section { padding: 55px 6%; } .modal-img { height: 175px; } }
+    @media(max-width: 850px) { .hero-inner { grid-template-columns: 1fr; text-align: center; } .hero-checks, .hero-buttons { justify-content: center; } .hero-text p { margin-left: auto; margin-right: auto; } }
+    @media(max-width: 600px) { header { justify-content: center; position: static; } nav { justify-content: center; } section { padding: 55px 6%; } }
   </style>
 </head>
 <body>
-  <header>
-  <a href="#start" class="logo-wrap">
-    <img src="logo.png" alt="ALLWERK Logo">
-    <div class="logo">ALL<span>WERK</span></div>
-  </a>
+
+<div class="topbar">
+  <span><strong>ALLWERK DIENSTLEISTUNGEN</strong> • Bad Driburg &amp; deutschlandweit</span>
+  <span>Tel. &amp; WhatsApp: <strong>0176 22815080</strong> | <strong>info@allwerk-dienstleistungen.de</strong></span>
+</div>
+
+<header>
+  <a href="#start" class="logo-wrap"><img src="logo.png" alt="Logo"><div class="logo">ALL<span>WERK</span></div></a>
   <nav>
-    <a href="#start">Startseite</a>
+    <a href="#start">Start</a>
     <a href="#leistungen">Leistungen</a>
     <a href="#vorteile">Vorteile</a>
     <a href="#ablauf">Ablauf</a>
     <a href="#einsatzgebiet">Einsatzgebiet</a>
-    <a href="#kontakt">Kontakt</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt" class="nav-cta">Anfragen</a>
   </nav>
 </header>
 
 <main>
   <div class="hero" id="start">
-    <img src="logo.png" alt="ALLWERK Dienstleistungen" class="hero-banner">
-    <div class="hero-content">
-      <div class="eyebrow">IHR PARTNER FÜR VIELE AUFGABEN</div>
-      <h1>ALLWERK <span>DIENSTLEISTUNGEN</span></h1>
-      <p>Ob Privatkunden, Hausverwaltungen oder Gewerbe: Wir bieten Ihnen tatkräftige, saubere und zuverlässige Unterstützung rund um Haus, Garten, Transport und Objektbetreuung.</p>
-      <div class="hero-buttons">
-        <a class="button" href="#leistungen">ALLE LEISTUNGEN ANSEHEN</a>
-        <a class="button-outline" href="#kontakt">KOSTENLOS ANFRAGEN</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">Zuverlässig • Professionell • Stark</div>
+        <h1>ALLWERK <span>DIENSTLEISTUNGEN</span></h1>
+        <p>Ihr starker Partner für Haus, Garten, Reinigung, Transport und Objektbetreuung – schnell, sauber und flexibel im Einsatz.</p>
+        <div class="hero-checks">
+          <span>✔ Kostenlose Besichtigung</span>
+          <span>✔ Kurzfristige Termine</span>
+          <span>✔ Privat &amp; Gewerbe</span>
+        </div>
+        <div class="hero-buttons">
+          <a class="button" href="#leistungen">LEISTUNGEN ANSEHEN</a>
+          <a class="button-outline" href="#kontakt">JETZT ANFRAGEN</a>
+        </div>
       </div>
+      <div class="hero-card"><img src="logo.png" alt="ALLWERK Dienstleistungen"></div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item"><strong>7</strong><span>Fachbereiche</span></div>
+      <div class="stat-item"><strong>200 km</strong><span>Regional-Service</span></div>
+      <div class="stat-item"><strong>100%</strong><span>Zuverlässig &amp; Sauber</span></div>
+      <div class="stat-item"><strong>DE-Weit</strong><span>Für Großprojekte</span></div>
     </div>
   </div>
 
@@ -119,104 +156,83 @@
     <div class="section-title">
       <h2>Unsere Leistungen im Detail</h2>
       <div class="gold-line"></div>
-      <p>Viele Aufgaben – ein starker und zuverlässiger Ansprechpartner.</p>
-      <div class="hint-badge">Tipp: Klicken Sie auf eine Leistung für Bilder &amp; alle Details</div>
+      <p>Klicken Sie auf einen Bereich für alle Unterpunkte &amp; direkte Anfrage.</p>
     </div>
     <div class="grid">
       <div class="service" onclick="openService('garten')">
-        <div><div class="symbol">✦</div><h3>Gartenarbeiten</h3><p>Fachgerechte Pflege von Grünflächen, Rasen, Hecken, Sträuchern und kompletten Außenanlagen.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Gartenarbeiten">
+        <div class="service-content"><div><h3>Gartenarbeiten</h3><p>Pflege von Grünflächen, Rasen, Hecken, Sträuchern und kompletten Außenanlagen.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('reinigung')">
-        <div><div class="symbol">✧</div><h3>Gebäudereinigung</h3><p>Gründliche Sauberkeit für Treppenhäuser, Büros, Gewerbeflächen und Wohngebäude.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Gebäudereinigung">
+        <div class="service-content"><div><h3>Gebäudereinigung</h3><p>Gründliche Sauberkeit für Treppenhäuser, Büros, Gewerbe und Wohngebäude.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('hausmeister')">
-        <div><div class="symbol">⌂</div><h3>Hausmeisterservice</h3><p>Rundum-Betreuung Ihrer Immobilie – von regelmäßigen Kontrollen bis zu Kleinreparaturen.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Hausmeisterservice">
+        <div class="service-content"><div><h3>Hausmeisterservice</h3><p>Rundum-Betreuung Ihrer Immobilie – von Kontrollen bis zu Kleinreparaturen.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('kurier')">
-        <div><div class="symbol">➤</div><h3>Kurier- &amp; Transportservice</h3><p>Sichere, pünktliche Direktfahrten, Kleintransporte und zuverlässige Zustellungen.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Kurierdienst">
+        <div class="service-content"><div><h3>Kurier- &amp; Transportservice</h3><p>Sichere, pünktliche Direktfahrten, Kleintransporte und Zustellungen.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('entruempelung')">
-        <div><div class="symbol">▣</div><h3>Entrümpelung</h3><p>Schnelle und besenreine Räumung von Wohnungen, Kellern, Dachböden, Garagen und Gewerbeobjekten.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Entrümpelung">
+        <div class="service-content"><div><h3>Entrümpelung</h3><p>Schnelle, besenreine Räumung von Wohnungen, Kellern, Dachböden und Garagen.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('winterdienst')">
-        <div><div class="symbol">❄</div><h3>Winterdienst</h3><p>Zuverlässiges Schneeräumen und Streuen für sichere Gehwege, Zufahrten und Parkplätze.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Winterdienst">
+        <div class="service-content"><div><h3>Winterdienst</h3><p>Zuverlässiges Schneeräumen und Streuen für sichere Wege und Zufahrten.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
       <div class="service" onclick="openService('allgemein')">
-        <div><div class="symbol">🤝</div><h3>Allgemeine Dienstleistungen</h3><p>Flexible tatkräftige Unterstützung bei Montagearbeiten, Umzugshilfe und Sonderprojekten.</p></div>
-        <span class="more-btn">Details &amp; Leistungen ansehen →</span>
+        <img class="service-thumb" src="https://pexels.com" alt="Allgemeine Dienstleistungen">
+        <div class="service-content"><div><h3>Allgemeine Dienstleistungen</h3><p>Flexible Unterstützung bei Montage, Umzugshilfe und Sonderprojekten.</p></div><span class="more-btn">Alle Details ansehen →</span></div>
       </div>
     </div>
   </section>
-
+  <!-- Vorteile & Ablauf -->
   <section id="vorteile">
-    <div class="section-title">
-      <h2>Warum ALLWERK Dienstleistungen?</h2>
-      <div class="gold-line"></div>
-      <p>Darauf können Sie sich bei jedem Einsatz verlassen.</p>
-    </div>
+    <div class="section-title"><h2>Warum ALLWERK Dienstleistungen?</h2><div class="gold-line"></div><p>Darauf können Sie sich verlassen.</p></div>
     <div class="why-grid">
-      <div class="why-card"><h3>✔ Pünktlich &amp; Zuverlässig</h3><p>Vereinbarte Termine werden eingehalten. Wir arbeiten sorgfältig, sauber und mit vollem Einsatz.</p></div>
-      <div class="why-card"><h3>✔ Alles aus einer Hand</h3><p>Statt fünf verschiedene Firmen zu beauftragen, haben Sie bei uns einen festen Ansprechpartner.</p></div>
-      <div class="why-card"><h3>✔ Faire &amp; klare Angebote</h3><p>Transparente Absprachen ohne versteckte Kosten – für kleine Einzelaufträge wie für Großprojekte.</p></div>
-      <div class="why-card"><h3>✔ Flexibel einsetzbar</h3><p>Ob kurzfristiger Einsatz, regelmäßige Objektpflege oder mehrwöchiges Projekt: Wir passen uns an.</p></div>
+      <div class="why-card"><h3>✔ Pünktlich &amp; Zuverlässig</h3><p>Sorgfältige und termingerechte Arbeit.</p></div>
+      <div class="why-card"><h3>✔ Alles aus einer Hand</h3><p>Fester Ansprechpartner für Ihr Projekt.</p></div>
+      <div class="why-card"><h3>✔ Faire &amp; klare Angebote</h3><p>Transparente Absprachen ohne versteckte Kosten.</p></div>
+      <div class="why-card"><h3>✔ Flexibel einsetzbar</h3><p>Kurzfristige Einsätze bis hin zu Großprojekten.</p></div>
     </div>
   </section>
 
-  <section class="about-section" id="ueber-uns">
-    <div class="about">
-      <div class="eyebrow">ÜBER ALLWERK DIENSTLEISTUNGEN</div>
-      <h2>Ein Ansprechpartner. Viele Möglichkeiten.</h2>
-      <div class="gold-line"></div>
-      <p>Hinter ALLWERK Dienstleistungen steht das Ziel, Privatpersonen, Vermieter und Unternehmen spürbar zu entlasten. Mit Tatkraft, Sorgfalt und einem geschulten Blick fürs Wesentliche packen wir dort an, wo zuverlässige Hilfe benötigt wird.</p>
-      <p><strong style="color:#d5ad58; letter-spacing:2px;">ZUVERLÄSSIG • PROFESSIONELL • STARK</strong></p>
-    </div>
-  </section>
-
-  <section id="ablauf">
-    <div class="section-title">
-      <h2>So einfach läuft Ihr Auftrag ab</h2>
-      <div class="gold-line"></div>
-      <p>In drei unkomplizierten Schritten zur erledigten Arbeit.</p>
-    </div>
+  <section id="ablauf" style="background:#14120e; border-top:1px solid #2b251c; border-bottom:1px solid #2b251c;">
+    <div class="section-title"><h2>So einfach läuft Ihr Auftrag ab</h2><div class="gold-line"></div></div>
     <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h3>Unverbindlich anfragen</h3><p>Rufen Sie uns an, schreiben Sie per WhatsApp oder senden Sie eine E-Mail.</p></div>
-      <div class="step-card"><div class="step-num">2</div><h3>Besichtigung &amp; Angebot</h3><p>Wir schauen uns das Objekt bei Bedarf an und erstellen ein faires, unverbindliches Angebot.</p></div>
-      <div class="step-card"><div class="step-num">3</div><h3>Saubere Durchführung</h3><p>Wir erledigen den Auftrag termingerecht, gründlich und besenrein.</p></div>
+      <div class="step-card"><div class="step-num">1</div><h3>Anfragen</h3><p>Telefonisch, per WhatsApp oder E-Mail.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Besichtigung</h3><p>Kostenlose Vor-Ort-Einschätzung &amp; Angebot.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Ausführung</h3><p>Termingerecht und besenrein.</p></div>
     </div>
   </section>
 
+  <!-- Einsatzgebiet & FAQ -->
   <section class="area" id="einsatzgebiet">
-    <div class="section-title">
-      <h2>Unser Einsatzgebiet</h2>
-      <div class="gold-line"></div>
-      <p>Flexibel in der Region – und stark bei Großprojekten in ganz Deutschland.</p>
-    </div>
+    <div class="section-title"><h2>Unser Einsatzgebiet</h2><div class="gold-line"></div></div>
     <div class="area-grid">
-      <div class="area-box">
-        <span class="area-tag">Umkreis ca. 200 km</span>
-        <h3>Bad Driburg &amp; Region</h3>
-        <p><strong>Kleine und große Aufträge:</strong> Rund um Bad Driburg sowie im gesamten Umkreis von ca. 200 km übernehmen wir sowohl kleine Einzelaufträge als auch umfangreiche Projekte – kurzfristig und flexibel.</p>
-      </div>
-      <div class="area-box">
-        <span class="area-tag">Über 200 km Entfernung</span>
-        <h3>Deutschlandweiter Einsatz</h3>
-        <p><strong>Nur große Aufträge:</strong> Bei Entfernungen über 200 km stehen wir Ihnen deutschlandweit für größere Projekte, umfangreiche Räumungen sowie mehrwöchige Einsätze zur Verfügung.</p>
-      </div>
+      <div class="area-box"><span class="area-tag">Umkreis ca. 200 km</span><h3>Bad Driburg &amp; Region</h3><p>Kleine und große Aufträge flexibel vor Ort.</p></div>
+      <div class="area-box"><span class="area-tag">Über 200 km</span><h3>Deutschlandweiter Einsatz</h3><p>Größere Projekte und Räumungen bundesweit.</p></div>
     </div>
   </section>
 
+  <section id="faq">
+    <div class="section-title"><h2>Häufig gestellte Fragen</h2><div class="gold-line"></div></div>
+    <div class="faq-list">
+      <details open><summary>Wie schnell bekomme ich einen Termin?</summary><p>Im Umkreis von 200 km oft sehr kurzfristig.</p></details>
+      <details><summary>Ist eine Besichtigung kostenlos?</summary><p>Ja, in unserer Region völlig unverbindlich.</p></details>
+      <details><summary>Auch für Firmen?</summary><p>Ja, für Privatkunden, Vermieter und Gewerbe.</p></details>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
   <section class="contact" id="kontakt">
     <h2>Wir freuen uns auf Ihre Anfrage!</h2>
-    <p>Sie benötigen Unterstützung? Kontaktieren Sie uns direkt per Telefon, WhatsApp oder E-Mail.</p>
     <div class="contact-links">
-      <div class="contact-card"><span>Telefon &amp; Anruf</span><a href="tel:+4917622815080">0176 22815080</a></div>
-      <div class="contact-card"><span>Direkt per WhatsApp</span><a href="https://wa.me:" target="_blank" rel="noopener">WhatsApp Nachricht senden</a></div>
+      <div class="contact-card"><span>Telefon</span><a href="tel:+4917622815080">0176 22815080</a></div>
+      <div class="contact-card"><span>WhatsApp</span><a href="https://wa.me:" target="_blank" rel="noopener">Nachricht senden</a></div>
       <div class="contact-card"><span>E-Mail</span><a href="mailto:info@allwerk-dienstleistungen.de">info@allwerk-dienstleistungen.de</a></div>
     </div>
   </section>
@@ -236,7 +252,6 @@
     </div>
   </div>
 </div>
-
 <footer>
   <strong>ALLWERK DIENSTLEISTUNGEN</strong><br>
   ZUVERLÄSSIG • PROFESSIONELL • STARK<br>
@@ -258,61 +273,56 @@
   </div>
   <div id="datenschutz" class="legal-box">
     <h3>Datenschutzerklärung</h3>
-    <h4>1. Datenschutz auf einen Blick</h4>
-    <p>Diese Webseite dient der Information über unsere Dienstleistungen. Wir erheben auf dieser Seite selbst keine personenbezogenen Daten über Tracking-Cookies.</p>
-    <h4>2. Verantwortliche Stelle</h4>
-    <p>ALLWERK Dienstleistungen – Mohamad Alghandour, Siegmannsbreite 2, 33014 Bad Driburg, Tel.: 0176 22815080, E-Mail: info@allwerk-dienstleistungen.de</p>
-    <h4>3. Hosting über GitHub Pages</h4>
-    <p>Diese Webseite wird über GitHub Pages (GitHub Inc., USA) bereitgestellt. Beim Aufruf erfasst der Server automatisch technische Logfiles (z. B. IP-Adresse, Browsertyp) zur sicheren Auslieferung.</p>
-    <h4>4. Kontaktaufnahme &amp; Ihre Rechte</h4>
-    <p>Bei Kontakt per Telefon, WhatsApp oder E-Mail werden Ihre Angaben zur Bearbeitung gespeichert und nicht ohne Einwilligung weitergegeben. Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten.</p>
+    <h4>1. Datenschutz &amp; Verantwortlicher</h4>
+    <p>ALLWERK Dienstleistungen – Mohamad Alghandour, Siegmannsbreite 2, 33014 Bad Driburg, Tel.: 0176 22815080, E-Mail: info@allwerk-dienstleistungen.de. Diese Seite verwendet keine Tracking-Cookies.</p>
+    <h4>2. Hosting &amp; Kontaktaufnahme</h4>
+    <p>Diese Webseite wird über GitHub Pages (GitHub Inc., USA) bereitgestellt. Bei Kontakt per Telefon, WhatsApp oder E-Mail werden Ihre Daten nur zur Bearbeitung Ihrer Anfrage genutzt und nicht ohne Einwilligung weitergegeben.</p>
     <button type="button" class="close-legal" onclick="toggleLegal('datenschutz')">Schließen</button>
   </div>
   <p style="margin-top:16px">© 2026 ALLWERK DIENSTLEISTUNGEN</p>
 </footer>
-
 <script>
   const serviceDetails = {
     garten: {
       title: "Gartenarbeiten & Grünflächenpflege",
-      img: "https://unsplash.com",
-      desc: "Ein gepflegter Garten und saubere Außenanlagen sind die Visitenkarte jedes Grundstücks. Wir übernehmen einmalige Pflegeeinsätze sowie die regelmäßige Betreuung.",
-      items: ["Rasen mähen & Rasenkanten schneiden", "Hecken-, Strauch- und Baumschnitt", "Unkrautentfernung & Beetpflege", "Laubbeseitigung & Grünschnitt-Abtransport", "Pflege von Gewerbe- und Wohnanlagen", "Reinigung von Terrassen, Wegen & Einfahrten"]
+      img: "https://pexels.com",
+      desc: "Fachgerechte Pflege von Grünflächen, Rasen, Hecken und Außenanlagen – einmalig oder regelmäßig.",
+      items: ["Rasen mähen & Rasenkanten schneiden", "Hecken-, Strauch- und Baumschnitt", "Unkrautentfernung & Beetpflege", "Laubbeseitigung & Grünschnitt-Abtransport", "Pflege von Wohn- und Gewerbeanlagen", "Reinigung von Wegen, Terrassen & Einfahrten"]
     },
     reinigung: {
       title: "Gebäudereinigung & Objektpflege",
-      img: "https://unsplash.com",
-      desc: "Gründliche Sauberkeit sorgt für Wohlbefinden und erhält den Wert Ihrer Immobilie. Wir reinigen zuverlässig, diskret und mit Blick für jedes Detail.",
-      items: ["Treppenhausreinigung für Mehrfamilienhäuser", "Büro- und Praxisreinigung", "Unterhaltsreinigung für Gewerbeobjekte", "Grundreinigung nach Auszug oder Renovierung", "Fenster- und Glasflächenreinigung", "Reinigung von Keller- und Gemeinschaftsflächen"]
+      img: "https://pexels.com",
+      desc: "Gründliche Sauberkeit und Werterhalt für Treppenhäuser, Büros, Praxen und Wohngebäude.",
+      items: ["Treppenhausreinigung für Mehrfamilienhäuser", "Büro- und Praxisreinigung", "Unterhaltsreinigung für Gewerbe", "Grundreinigung nach Auszug oder Renovierung", "Fenster- und Glasflächenreinigung", "Reinigung von Keller- und Gemeinschaftsflächen"]
     },
     hausmeister: {
       title: "Hausmeisterservice & Objektbetreuung",
-      img: "https://unsplash.com",
-      desc: "Wir kümmern uns um alles, was rund um Ihre Immobilie anfällt – ideal für Hausverwaltungen, Vermieter und Gewerbebetriebe.",
-      items: ["Regelmäßige Objektkontrollen & Rundgänge", "Kleinreparaturen & Instandhaltungsarbeiten", "Mülltonnenservice (Bereitstellung & Rückholung)", "Pflege der Außenanlagen & Zufahrten", "Koordination von Handwerkern vor Ort", "Urlaubs- und Krankheitsvertretung"]
+      img: "https://pexels.com",
+      desc: "Rundum-Betreuung Ihrer Immobilie – ideal für Hausverwaltungen, Vermieter und Gewerbebetriebe.",
+      items: ["Regelmäßige Objektkontrollen & Rundgänge", "Kleinreparaturen & Instandhaltung", "Mülltonnenservice (Bereitstellung & Rückholung)", "Pflege der Außenanlagen & Zufahrten", "Koordination von Handwerkern vor Ort", "Urlaubs- und Krankheitsvertretung"]
     },
     kurier: {
       title: "Kurier- & Transportservice",
-      img: "https://unsplash.com",
-      desc: "Wenn Waren, Pakete, Möbelstücke oder wichtige Sendungen schnell und sicher von A nach B müssen, sind wir Ihr verlässlicher Transportpartner.",
-      items: ["Direkt- und Sonderfahrten ohne Umwege", "Kleintransporte für Privat & Gewerbe", "Abholung & Lieferung von Möbel- oder Baumarktkäufen", "Regelmäßige Kurierfahrten für Firmen", "Sorgfältige Ladungssicherung", "Flexible Einsätze regional & deutschlandweit"]
+      img: "https://pexels.com",
+      desc: "Sichere, pünktliche Direktfahrten, Kleintransporte und zuverlässige Zustellungen ohne Umwege.",
+      items: ["Direkt- und Sonderfahrten", "Kleintransporte für Privat & Gewerbe", "Abholung & Lieferung von Möbel- oder Baumarktkäufen", "Regelmäßige Kurierfahrten für Firmen", "Sorgfältige Ladungssicherung", "Einsätze regional & deutschlandweit"]
     },
     entruempelung: {
       title: "Entrümpelung & Haushaltsauflösung",
-      img: "https://unsplash.com",
-      desc: "Ob nach einem Umzug, einer Renovierung oder bei einer Haushaltsauflösung: Wir schaffen schnell wieder Platz und übergeben alle Räume besenrein.",
+      img: "https://pexels.com",
+      desc: "Schnelle und diskrete Räumung von Wohnungen, Kellern, Dachböden und Gewerbeobjekten – garantiert besenrein.",
       items: ["Komplette Wohnungs- und Haushaltsauflösungen", "Entrümpelung von Kellern, Dachböden & Garagen", "Räumung von Büros, Lagern & Gewerbeflächen", "Fachgerechtes Sortieren, Trennen & Entsorgen", "Demontage von alten Möbeln & Einbauten", "Garantiert besenreine Übergabe"]
     },
     winterdienst: {
       title: "Winterdienst & Räumpflicht",
-      img: "https://unsplash.com",
-      desc: "Bei Schnee und Glatteis sind wir frühzeitig für Sie im Einsatz, damit Bewohner, Kunden und Mitarbeiter sicher unterwegs sind.",
+      img: "https://pexels.com",
+      desc: "Zuverlässiges Schneeräumen und Streuen für sichere Gehwege, Zufahrten und Parkplätze.",
       items: ["Schneeräumung auf Gehwegen & Zufahrten", "Räumen von Parkplätzen, Höfen & Eingängen", "Streudienst bei Eis- und Glättegefahr", "Einsätze für Privat, Vermieter & Gewerbe", "Regelmäßige Bereitschaft im Winter", "Sorgfältige Kontrolle kritischer Stellen"]
     },
     allgemein: {
       title: "Allgemeine Dienstleistungen & Projektunterstützung",
-      img: "https://unsplash.com",
-      desc: "Sie haben eine spezielle Aufgabe? Fragen Sie uns einfach an – wir packen tatkräftig mit an.",
+      img: "https://pexels.com",
+      desc: "Flexible, tatkräftige Unterstützung bei Montagearbeiten, Umzugshilfe und mehrwöchigen Projekten.",
       items: ["Trage-, Lade- und Umzugshilfe", "Auf- und Abbau von Möbeln und Regalen", "Vorbereitungsarbeiten vor Renovierungen", "Aufräumarbeiten auf Baustellen", "Tatkräftige Helfer für mehrwöchige Projekte", "Individuelle Lösungen nach Wunsch"]
     }
   };
